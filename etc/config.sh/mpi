@@ -61,7 +61,7 @@ SYSTEMOPENMPI*)
     ;;
 
 OPENMPI)
-    export FOAM_MPI=openmpi-4.0.3
+    export FOAM_MPI=openmpi-1.10.4
     _foamEtc -config  openmpi                   # <- Adjustments (optional)
 
     # Respect MPI_ARCH_PATH if set to valid directory (eg, user adjustments)
@@ -72,6 +72,8 @@ OPENMPI)
 
     # Inform openmpi where to find its install directory
     export OPAL_PREFIX=$MPI_ARCH_PATH
+    export OPAL_LIBDIR=$MPI_ARCH_PATH/lib64
+
 
     if [ -n "$FOAM_VERBOSE" ] && [ -n "$PS1" ]
     then

@@ -34,9 +34,9 @@
 #------------------------------------------------------------------------------
 # USER EDITABLE PART: Changes made here may be lost with the next upgrade
 
-vtk_version=VTK-8.2.0
+vtk_version=ParaView-5.6.3-mesa-mpi-py
 mesa_version=mesa-17.1.1
-mesa_llvm=none
+mesa_llvm=llvm-4.0.0
 
 export VTK_DIR="$WM_THIRD_PARTY_DIR/platforms/$WM_ARCH$WM_COMPILER/$vtk_version"
 export MESA_ARCH_PATH="$WM_THIRD_PARTY_DIR/platforms/$WM_ARCH$WM_COMPILER/$mesa_version"

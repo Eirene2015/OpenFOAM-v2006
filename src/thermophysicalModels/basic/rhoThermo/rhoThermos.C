@@ -46,6 +46,8 @@ License
 #include "thermo.H"
 
 #include "constTransport.H"
+#include "H2_gTransport.H"
+#include "H2_lTransport.H"
 #include "sutherlandTransport.H"
 #include "WLFTransport.H"
 
@@ -80,6 +82,31 @@ makeThermos
     rhoThermo,
     heRhoThermo,
     pureMixture,
+    H2_gTransport,
+    sensibleEnthalpy,
+    hConstThermo,
+    perfectGas,
+    specie
+);
+
+
+makeThermos
+(
+    rhoThermo,
+    heRhoThermo,
+    pureMixture,
+    H2_lTransport,
+    sensibleEnthalpy,
+    hConstThermo,
+    perfectGas,
+    specie
+);
+
+makeThermos
+(
+    rhoThermo,
+    heRhoThermo,
+    pureMixture,
     sutherlandTransport,
     sensibleEnthalpy,
     hConstThermo,
@@ -152,6 +179,102 @@ makeThermos
     rhoThermo,
     heRhoThermo,
     pureMixture,
+    H2_gTransport,
+    sensibleEnthalpy,
+    hConstThermo,
+    rhoConst,
+    specie
+);
+
+makeThermos
+(
+    rhoThermo,
+    heRhoThermo,
+    pureMixture,
+    H2_gTransport,
+    sensibleEnthalpy,
+    hConstThermo,
+    perfectFluid,
+    specie
+);
+
+makeThermos
+(
+    rhoThermo,
+    heRhoThermo,
+    pureMixture,
+    H2_gTransport,
+    sensibleEnthalpy,
+    hConstThermo,
+    rPolynomial,
+    specie
+);
+
+makeThermos
+(
+    rhoThermo,
+    heRhoThermo,
+    pureMixture,
+    H2_gTransport,
+    sensibleEnthalpy,
+    hConstThermo,
+    adiabaticPerfectFluid,
+    specie
+);
+
+makeThermos
+(
+    rhoThermo,
+    heRhoThermo,
+    pureMixture,
+    H2_lTransport,
+    sensibleEnthalpy,
+    hConstThermo,
+    rhoConst,
+    specie
+);
+
+makeThermos
+(
+    rhoThermo,
+    heRhoThermo,
+    pureMixture,
+    H2_lTransport,
+    sensibleEnthalpy,
+    hConstThermo,
+    perfectFluid,
+    specie
+);
+
+makeThermos
+(
+    rhoThermo,
+    heRhoThermo,
+    pureMixture,
+    H2_lTransport,
+    sensibleEnthalpy,
+    hConstThermo,
+    rPolynomial,
+    specie
+);
+
+makeThermos
+(
+    rhoThermo,
+    heRhoThermo,
+    pureMixture,
+    H2_lTransport,
+    sensibleEnthalpy,
+    hConstThermo,
+    adiabaticPerfectFluid,
+    specie
+);
+
+makeThermos
+(
+    rhoThermo,
+    heRhoThermo,
+    pureMixture,
     polynomialTransport,
     sensibleEnthalpy,
     hPolynomialThermo,
@@ -188,6 +311,30 @@ makeThermos
     rhoThermo,
     heRhoThermo,
     pureMixture,
+    H2_gTransport,
+    sensibleEnthalpy,
+    hConstThermo,
+    incompressiblePerfectGas,
+    specie
+);
+
+makeThermos
+(
+    rhoThermo,
+    heRhoThermo,
+    pureMixture,
+    H2_lTransport,
+    sensibleEnthalpy,
+    hConstThermo,
+    incompressiblePerfectGas,
+    specie
+);
+
+makeThermos
+(
+    rhoThermo,
+    heRhoThermo,
+    pureMixture,
     sutherlandTransport,
     sensibleEnthalpy,
     hConstThermo,
@@ -213,6 +360,30 @@ makeThermos
     heRhoThermo,
     pureMixture,
     constTransport,
+    sensibleEnthalpy,
+    hConstThermo,
+    Boussinesq,
+    specie
+);
+
+makeThermos
+(
+    rhoThermo,
+    heRhoThermo,
+    pureMixture,
+    H2_gTransport,
+    sensibleEnthalpy,
+    hConstThermo,
+    Boussinesq,
+    specie
+);
+
+makeThermos
+(
+    rhoThermo,
+    heRhoThermo,
+    pureMixture,
+    H2_lTransport,
     sensibleEnthalpy,
     hConstThermo,
     Boussinesq,
@@ -298,6 +469,30 @@ makeThermos
     rhoThermo,
     heRhoThermo,
     pureMixture,
+    H2_gTransport,
+    sensibleInternalEnergy,
+    hConstThermo,
+    perfectGas,
+    specie
+);
+
+makeThermos
+(
+    rhoThermo,
+    heRhoThermo,
+    pureMixture,
+    H2_lTransport,
+    sensibleInternalEnergy,
+    hConstThermo,
+    perfectGas,
+    specie
+);
+
+makeThermos
+(
+    rhoThermo,
+    heRhoThermo,
+    pureMixture,
     sutherlandTransport,
     sensibleInternalEnergy,
     hConstThermo,
@@ -414,6 +609,200 @@ makeThermos
     specie
 );
 
+
+makeThermos
+(
+    rhoThermo,
+    heRhoThermo,
+    pureMixture,
+    H2_gTransport,
+    sensibleInternalEnergy,
+    hConstThermo,
+    rhoConst,
+    specie
+);
+
+makeThermos
+(
+    rhoThermo,
+    heRhoThermo,
+    pureMixture,
+    H2_gTransport,
+    sensibleInternalEnergy,
+    eConstThermo,
+    rhoConst,
+    specie
+);
+
+makeThermos
+(
+    rhoThermo,
+    heRhoThermo,
+    pureMixture,
+    H2_gTransport,
+    sensibleInternalEnergy,
+    hConstThermo,
+    perfectFluid,
+    specie
+);
+
+makeThermos
+(
+    rhoThermo,
+    heRhoThermo,
+    pureMixture,
+    H2_gTransport,
+    sensibleInternalEnergy,
+    hConstThermo,
+    rPolynomial,
+    specie
+);
+
+makeThermos
+(
+    rhoThermo,
+    heRhoThermo,
+    pureMixture,
+    H2_gTransport,
+    sensibleInternalEnergy,
+    eConstThermo,
+    perfectFluid,
+    specie
+);
+
+makeThermos
+(
+    rhoThermo,
+    heRhoThermo,
+    pureMixture,
+    H2_gTransport,
+    sensibleInternalEnergy,
+    eConstThermo,
+    rPolynomial,
+    specie
+);
+
+makeThermos
+(
+    rhoThermo,
+    heRhoThermo,
+    pureMixture,
+    H2_gTransport,
+    sensibleInternalEnergy,
+    hConstThermo,
+    adiabaticPerfectFluid,
+    specie
+);
+
+
+makeThermos
+(
+    rhoThermo,
+    heRhoThermo,
+    pureMixture,
+    H2_gTransport,
+    sensibleInternalEnergy,
+    eConstThermo,
+    adiabaticPerfectFluid,
+    specie
+);
+
+makeThermos
+(
+    rhoThermo,
+    heRhoThermo,
+    pureMixture,
+    H2_lTransport,
+    sensibleInternalEnergy,
+    hConstThermo,
+    rhoConst,
+    specie
+);
+
+makeThermos
+(
+    rhoThermo,
+    heRhoThermo,
+    pureMixture,
+    H2_lTransport,
+    sensibleInternalEnergy,
+    eConstThermo,
+    rhoConst,
+    specie
+);
+
+makeThermos
+(
+    rhoThermo,
+    heRhoThermo,
+    pureMixture,
+    H2_lTransport,
+    sensibleInternalEnergy,
+    hConstThermo,
+    perfectFluid,
+    specie
+);
+
+makeThermos
+(
+    rhoThermo,
+    heRhoThermo,
+    pureMixture,
+    H2_lTransport,
+    sensibleInternalEnergy,
+    hConstThermo,
+    rPolynomial,
+    specie
+);
+
+makeThermos
+(
+    rhoThermo,
+    heRhoThermo,
+    pureMixture,
+    H2_lTransport,
+    sensibleInternalEnergy,
+    eConstThermo,
+    perfectFluid,
+    specie
+);
+
+makeThermos
+(
+    rhoThermo,
+    heRhoThermo,
+    pureMixture,
+    H2_lTransport,
+    sensibleInternalEnergy,
+    eConstThermo,
+    rPolynomial,
+    specie
+);
+
+makeThermos
+(
+    rhoThermo,
+    heRhoThermo,
+    pureMixture,
+    H2_lTransport,
+    sensibleInternalEnergy,
+    hConstThermo,
+    adiabaticPerfectFluid,
+    specie
+);
+
+
+makeThermos
+(
+    rhoThermo,
+    heRhoThermo,
+    pureMixture,
+    H2_lTransport,
+    sensibleInternalEnergy,
+    eConstThermo,
+    adiabaticPerfectFluid,
+    specie
+);
 
 makeThermos
 (
@@ -444,6 +833,30 @@ makeThermos
     rhoThermo,
     heRhoThermo,
     pureMixture,
+    H2_gTransport,
+    sensibleInternalEnergy,
+    hConstThermo,
+    incompressiblePerfectGas,
+    specie
+);
+
+makeThermos
+(
+    rhoThermo,
+    heRhoThermo,
+    pureMixture,
+    H2_lTransport,
+    sensibleInternalEnergy,
+    hConstThermo,
+    incompressiblePerfectGas,
+    specie
+);
+
+makeThermos
+(
+    rhoThermo,
+    heRhoThermo,
+    pureMixture,
     sutherlandTransport,
     sensibleInternalEnergy,
     hConstThermo,
@@ -469,6 +882,30 @@ makeThermos
     heRhoThermo,
     pureMixture,
     constTransport,
+    sensibleInternalEnergy,
+    hConstThermo,
+    Boussinesq,
+    specie
+);
+
+makeThermos
+(
+    rhoThermo,
+    heRhoThermo,
+    pureMixture,
+    H2_gTransport,
+    sensibleInternalEnergy,
+    hConstThermo,
+    Boussinesq,
+    specie
+);
+
+makeThermos
+(
+    rhoThermo,
+    heRhoThermo,
+    pureMixture,
+    H2_lTransport,
     sensibleInternalEnergy,
     hConstThermo,
     Boussinesq,

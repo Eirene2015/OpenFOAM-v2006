@@ -57,8 +57,12 @@
 #------------------------------------------------------------------------------
 # USER EDITABLE PART: Changes made here may be lost with the next upgrade
 
-ParaView_VERSION=5.6.3
-ParaView_QT=qt-system
+ParaView_VERSION=5.6.3-mpi-py
+#ParaView_VERSION=5.6.3-mesa-mpi-py
+ParaView_QT=qt-5.9.0
+cmake_version=cmake-3.10.1
+
+
 
 # END OF (NORMAL) USER EDITABLE PART
 #------------------------------------------------------------------------------

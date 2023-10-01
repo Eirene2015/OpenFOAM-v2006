@@ -87,7 +87,7 @@ export WM_COMPILE_OPTION=Opt
 # = SYSTEMOPENMPI | OPENMPI | SYSTEMMPI | MPI | MPICH | MPICH-GM |
 #   HPMPI | CRAY-MPICH | FJMPI | QSMPI | SGIMPI | INTELMPI | USERMPI
 # Also possible to use INTELMPI-xyz etc and define your own wmake rule
-export WM_MPLIB=SYSTEMOPENMPI
+export WM_MPLIB=OPENMPI
 
 
 #------------------------------------------------------------------------------
@@ -152,7 +152,7 @@ unset FOAM_EXTRA_CFLAGS FOAM_EXTRA_CXXFLAGS FOAM_EXTRA_LDFLAGS
 
 # Capture values of old directories to be cleaned from PATH, LD_LIBRARY_PATH
 foamOldDirs="$WM_PROJECT_DIR $WM_THIRD_PARTY_DIR \
-    $HOME/$WM_PROJECT/$USER $FOAM_USER_APPBIN $FOAM_USER_LIBBIN \
+    $HOME/$WM_PROJECT/ofuser $FOAM_USER_APPBIN $FOAM_USER_LIBBIN \
     $WM_PROJECT_SITE $FOAM_SITE_APPBIN $FOAM_SITE_LIBBIN \
     $FOAM_MODULE_APPBIN $FOAM_MODULE_LIBBIN"
 
@@ -160,7 +160,7 @@ foamOldDirs="$WM_PROJECT_DIR $WM_THIRD_PARTY_DIR \
 export WM_PROJECT_DIR="$projectDir"
 
 # [WM_PROJECT_USER_DIR] - Location of user files
-export WM_PROJECT_USER_DIR="$HOME/$WM_PROJECT/$USER-$WM_PROJECT_VERSION"
+export WM_PROJECT_USER_DIR="$HOME/$WM_PROJECT/ofuser-$WM_PROJECT_VERSION"
 
 # [WM_PROJECT_SITE] - Location of site-specific (group) files
 # Default (unset) implies WM_PROJECT_DIR/site

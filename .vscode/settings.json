@@ -1,0 +1,18 @@
+{
+    "files.associations": {
+        "H2_gTransport.C": "cpp",
+        "reactingTwoPhaseEulerFoam.C": "cpp",
+        "InterfaceCompositionModels.C": "cpp",
+        "heRhoThermo.C": "cpp",
+        "liquidThermo.C": "cpp",
+        "rhoThermos.C": "cpp",
+        "rhoThermo.C": "cpp",
+        "thermophysicalPropertiesSelector.C": "cpp",
+        "specie.C": "cpp",
+        "hRefConstThermos.C": "cpp",
+        "eRefConstThermo.C": "cpp",
+        "H2_lTransport.C": "cpp",
+        "cmath": "cpp",
+        "complex": "cpp"
+    }
+}

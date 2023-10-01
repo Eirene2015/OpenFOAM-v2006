@@ -43,6 +43,8 @@ License
 #include "eRefConstThermo.H"
 
 #include "constTransport.H"
+#include "H2_gTransport.H"
+#include "H2_lTransport.H"
 
 #include "pureMixture.H"
 #include "multiComponentMixture.H"
@@ -214,6 +216,101 @@ makeThermos
     specie
 );
 
+makeThermos
+(
+    rhoThermo,
+    heRhoThermo,
+    pureMixture,
+    H2_gTransport,
+    sensibleEnthalpy,
+    hRefConstThermo,
+    perfectGas,
+    specie
+);
+
+makeThermos
+(
+    rhoThermo,
+    heRhoThermo,
+    pureMixture,
+    H2_gTransport,
+    sensibleEnthalpy,
+    hRefConstThermo,
+    rPolynomial,
+    specie
+);
+
+makeThermos
+(
+    rhoThermo,
+    heRhoThermo,
+    pureMixture,
+    H2_gTransport,
+    sensibleEnthalpy,
+    hRefConstThermo,
+    perfectFluid,
+    specie
+);
+
+makeThermos
+(
+    rhoThermo,
+    heRhoThermo,
+    pureMixture,
+    H2_gTransport,
+    sensibleEnthalpy,
+    hRefConstThermo,
+    rhoConst,
+    specie
+);
+
+makeThermos
+(
+    rhoThermo,
+    heRhoThermo,
+    pureMixture,
+    H2_lTransport,
+    sensibleEnthalpy,
+    hRefConstThermo,
+    perfectGas,
+    specie
+);
+
+makeThermos
+(
+    rhoThermo,
+    heRhoThermo,
+    pureMixture,
+    H2_lTransport,
+    sensibleEnthalpy,
+    hRefConstThermo,
+    rPolynomial,
+    specie
+);
+
+makeThermos
+(
+    rhoThermo,
+    heRhoThermo,
+    pureMixture,
+    H2_lTransport,
+    sensibleEnthalpy,
+    hRefConstThermo,
+    perfectFluid,
+    specie
+);
+
+makeThermos
+(
+    rhoThermo,
+    heRhoThermo,
+    pureMixture,
+    H2_lTransport,
+    sensibleEnthalpy,
+    hRefConstThermo,
+    rhoConst,
+    specie
+);
 
 // pureMixture, sensibleInternalEnergy:
 
@@ -265,6 +362,101 @@ makeThermos
     specie
 );
 
+makeThermos
+(
+    rhoThermo,
+    heRhoThermo,
+    pureMixture,
+    H2_gTransport,
+    sensibleInternalEnergy,
+    eRefConstThermo,
+    perfectGas,
+    specie
+);
+
+makeThermos
+(
+    rhoThermo,
+    heRhoThermo,
+    pureMixture,
+    H2_gTransport,
+    sensibleInternalEnergy,
+    eRefConstThermo,
+    rPolynomial,
+    specie
+);
+
+makeThermos
+(
+    rhoThermo,
+    heRhoThermo,
+    pureMixture,
+    H2_gTransport,
+    sensibleInternalEnergy,
+    eRefConstThermo,
+    perfectFluid,
+    specie
+);
+
+makeThermos
+(
+    rhoThermo,
+    heRhoThermo,
+    pureMixture,
+    H2_gTransport,
+    sensibleInternalEnergy,
+    eRefConstThermo,
+    rhoConst,
+    specie
+);
+
+makeThermos
+(
+    rhoThermo,
+    heRhoThermo,
+    pureMixture,
+    H2_lTransport,
+    sensibleInternalEnergy,
+    eRefConstThermo,
+    perfectGas,
+    specie
+);
+
+makeThermos
+(
+    rhoThermo,
+    heRhoThermo,
+    pureMixture,
+    H2_lTransport,
+    sensibleInternalEnergy,
+    eRefConstThermo,
+    rPolynomial,
+    specie
+);
+
+makeThermos
+(
+    rhoThermo,
+    heRhoThermo,
+    pureMixture,
+    H2_lTransport,
+    sensibleInternalEnergy,
+    eRefConstThermo,
+    perfectFluid,
+    specie
+);
+
+makeThermos
+(
+    rhoThermo,
+    heRhoThermo,
+    pureMixture,
+    H2_lTransport,
+    sensibleInternalEnergy,
+    eRefConstThermo,
+    rhoConst,
+    specie
+);
 
 // multiComponentMixture, sensibleInternalEnergy:
 

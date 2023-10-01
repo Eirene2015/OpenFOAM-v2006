@@ -1,0 +1,20 @@
+#!/bin/sh
+cd "${0%/*}" || exit    # Run from this directory
+
+wclean libso specie
+wclean libso solidSpecie
+wclean libso thermophysicalProperties
+
+wclean libso basic
+wclean libso reactionThermo
+wclean libso laminarFlameSpeed
+wclean libso chemistryModel
+wclean libso barotropicCompressibilityModel
+wclean libso SLGThermo
+
+wclean libso solidThermo
+wclean libso solidChemistryModel
+
+wclean libso radiation
+
+#------------------------------------------------------------------------------
