@@ -81,8 +81,8 @@ inline Foam::scalar Foam::H2_lTransport<Thermo>::mu
 ) const
 {
 
-    //- Fitted Curve For P = 80000 Pa: 276.3824 * Foam::pow(T - 65.4049, 3) + -14.3984 * Foam::pow(T - 65.4049, 2) + 0.5491 * (T - 65.4049) + -0.0154
-    //- Fitted Curve For P = 1000000 Pa: 92.5502 * Foam::pow(T - 93.7469, 3) + -2.8942 * Foam::pow(T - 93.7469, 2) + 0.0540 * (T - 93.7469) + -0.0013
+    //- Fitted Curve for P = 80000 Pa: VISCOSITY*1e-6 = 23.4844 * Foam::pow(T - 14.5942, 3) + -2.7867 * Foam::pow(T - 14.5942, 2) + 0.2981 * (T - 14.5942) + -0.0315
+    //- Fitted Curve for P = 1000000 Pa: VISCOSITY*1e-6 = 9.0637 * Foam::pow(T - 26.3925, 3) + -0.6848 * Foam::pow(T - 26.3925, 2) + 0.0152 * (T - 26.3925) + -0.0028    
     // Define the pressure values and corresponding viscosity equations
 
     scalar P1 = 80000;
@@ -93,18 +93,18 @@ inline Foam::scalar Foam::H2_lTransport<Thermo>::mu
 
     if (p <= P1)
     {
-        muValue = ( 276.3824 * Foam::pow(T - 65.4049, 3) - 14.3984 * Foam::pow(T - 65.4049, 2) + 0.5491 * (T - 65.4049) - 0.0154 ) * 1e-6;
+        muValue = ( 23.4844 * Foam::pow(T - 14.5942, 3) - 2.7867 * Foam::pow(T - 14.5942, 2) + 0.2981 * (T - 14.5942) - 0.0315 ) * 1e-6;
     }
     else if (p <= P2)
     {
-        scalar muP1 = ( 276.3824 * Foam::pow(T - 65.4049, 3) - 14.3984 * Foam::pow(T - 65.4049, 2) + 0.5491 * (T - 65.4049) - 0.0154) * 1e-6;
-        scalar muP2 = ( 92.5502 * Foam::pow(T - 93.7469, 3) - 2.8942 * Foam::pow(T - 93.7469, 2) + 0.0540 * (T - 93.7469) - 0.0013 ) * 1e-6;
+        scalar muP1 = ( 23.4844 * Foam::pow(T - 14.5942, 3) - 2.7867 * Foam::pow(T - 14.5942, 2) + 0.2981 * (T - 14.5942) - 0.0315 ) * 1e-6;
+        scalar muP2 = ( 9.0637 * Foam::pow(T - 26.3925, 3) - 0.6848 * Foam::pow(T - 26.3925, 2) + 0.0152 * (T - 26.3925) - 0.0028 ) * 1e-6;
         scalar muWeight = (p - P1) / (P2 - P1);  // Linear interpolation weight
         muValue = muP1 + muWeight * (muP2 - muP1);
     }
     else
     {
-        muValue = ( 92.5502 * Foam::pow(T - 93.7469, 3) - 2.8942 * Foam::pow(T - 93.7469, 2) + 0.0540 * (T - 93.7469) - 0.0013 ) * 1e-6;
+        muValue = ( 9.0637 * Foam::pow(T - 26.3925, 3) - 0.6848 * Foam::pow(T - 26.3925, 2) + 0.0152 * (T - 26.3925) - 0.0028 ) * 1e-6;
     }
 
     return muValue;
@@ -119,8 +119,8 @@ inline Foam::scalar Foam::H2_lTransport<Thermo>::cp
 {
     //- TODO: i have to check to see what is the p value in openfoam. (is it pressure or prgh?)
 
-    //- Fitted Curve P = 800000 Pa: 2134.4985 * Foam::pow(T - 90.3987, 3) + 12.2402 * Foam::pow(T - 90.3987, 2) + 0.4811 * Foam::pow(T - 90.3987) + 0.0182
-    //- Fitted Curve P = 1000000 Pa: 2175.0394 * Foam::pow(T - 93.7469, 3) + 15.5442 * Foam::pow(T - 93.7469, 2) + 0.6391 * Foam::pow(T - 93.7469) + 0.0276
+    //- Fitted Curve P = 80000 Pa: 7189.9311 * Foam::pow(T - 14.5942, 3) + 330.0995 * Foam::pow(T - 14.5942, 2) + 32.4909 * (T - 14.5942) - 3.4206;
+    //- Fitted Curve P = 1000000 Pa: 13732.7309 * Foam::pow(T - 26.3925, 3) + 1148.9115 * Foam::pow(T - 26.3925, 2) + 127.9205 * (T - 26.3925) + 35.0688;
     // Define the pressure values and corresponding viscosity equations
 
     scalar P1 = 80000;
@@ -131,18 +131,18 @@ inline Foam::scalar Foam::H2_lTransport<Thermo>::cp
 
     if (p <= P1)
     {
-        cpValue = 2134.4985 * Foam::pow(T - 90.3987, 3) + 12.2402 * Foam::pow(T - 90.3987, 2) + 0.4811 * (T - 90.3987) + 0.0182;
+        cpValue = 7189.9311 * Foam::pow(T - 14.5942, 3) + 330.0995 * Foam::pow(T - 14.5942, 2) + 32.4909 * (T - 14.5942) - 3.4206;
     }
     else if (p <= P2)
     {
-        scalar cpP1 = 2134.4985 * Foam::pow(T - 90.3987, 3) + 12.2402 * Foam::pow(T - 90.3987, 2) + 0.4811 * (T - 90.3987) + 0.0182;
-        scalar cpP2 = 2175.0394 * Foam::pow(T - 93.7469, 3) + 15.5442 * Foam::pow(T - 93.7469, 2) + 0.6391 * (T - 93.7469) + 0.0276;
+        scalar cpP1 = 7189.9311 * Foam::pow(T - 14.5942, 3) + 330.0995 * Foam::pow(T - 14.5942, 2) + 32.4909 * (T - 14.5942) - 3.4206;
+        scalar cpP2 = 13732.7309 * Foam::pow(T - 26.3925, 3) + 1148.9115 * Foam::pow(T - 26.3925, 2) + 127.9205 * (T - 26.3925) + 35.0688;
         scalar cpWeight = (p - P1) / (P2 - P1);  // Linear interpolation weight
         cpValue = cpP1 + cpWeight * (cpP2 - cpP1);
     }
     else
     {
-        cpValue = 2175.0394 * Foam::pow(T - 93.7469, 3) + 15.5442 * Foam::pow(T - 93.7469, 2) + 0.6391 * (T - 93.7469) + 0.0276;
+        cpValue = 13732.7309 * Foam::pow(T - 26.3925, 3) + 1148.9115 * Foam::pow(T - 26.3925, 2) + 127.9205 * (T - 26.3925) + 35.0688;
     }
 
     return cpValue;
@@ -160,33 +160,33 @@ inline Foam::scalar Foam::H2_lTransport<Thermo>::cv
     //- TODO: i have to check to see what is the p value in openfoam. (is it pressure or prgh?)
 
 
-    //- Fitted Curve P = 80000 Pa: 1706.9617 * pow(T - 65.4049, 3) + 1.8709 * pow(T - 65.4049, 2) + 0.0727 * (T - 65.4049) + 0.0031
-    //- Fitted Curve P = 1000000 Pa: 1878.2529 * pow(T - 93.7469, 3) + 15.5442 * pow(T - 93.7469, 2) + 0.6391 * (T - 93.7469) + 0.0276
+    //- Fitted Curve P = 80000 Pa: 6893.1445 * Foam::pow(T - 14.5942, 3) + 330.0995 * Foam::pow(T - 14.5942, 2) + 32.4909 * (T - 14.5942) - 3.4206;
+    //- Fitted Curve P = 1000000 Pa: 13435.9443 * Foam::pow(T - 26.3925, 3) + 1148.9115 * Foam::pow(T - 26.3925, 2) + 127.9205 * (T - 26.3925) + 35.0688;
     // Define the pressure values and corresponding viscosity equations
 
     scalar P1 = 80000;
     scalar P2 = 1000000;
 
     // Calculate mu based on pressure (p) and temperature (T) using linear interpolation
-    scalar cpValue = 0.0;
+    scalar cvValue = 0.0;
 
     if (p <= P1)
     {
-        cpValue = 1706.9617 * pow(T - 65.4049, 3) + 1.8709 * pow(T - 65.4049, 2) + 0.0727 * (T - 65.4049) + 0.0031;
+        cvValue = 6893.1445 * Foam::pow(T - 14.5942, 3) + 330.0995 * Foam::pow(T - 14.5942, 2) + 32.4909 * (T - 14.5942) - 3.4206;
     }
     else if (p <= P2)
     {
-        scalar cpP1 = 1706.9617 * pow(T - 65.4049, 3) + 1.8709 * pow(T - 65.4049, 2) + 0.0727 * (T - 65.4049) + 0.0031;
-        scalar cpP2 = 1878.2529 * pow(T - 93.7469, 3) + 15.5442 * pow(T - 93.7469, 2) + 0.6391 * (T - 93.7469) + 0.0276;
-        scalar cpWeight = (p - P1) / (P2 - P1);  // Linear interpolation weight
-        cpValue = cpP1 + cpWeight * (cpP2 - cpP1);
+        scalar cvP1 = 6893.1445 * Foam::pow(T - 14.5942, 3) + 330.0995 * Foam::pow(T - 14.5942, 2) + 32.4909 * (T - 14.5942) - 3.4206;
+        scalar cvP2 = 13435.9443 * Foam::pow(T - 26.3925, 3) + 1148.9115 * Foam::pow(T - 26.3925, 2) + 127.9205 * (T - 26.3925) + 35.0688;
+        scalar cvWeight = (p - P1) / (P2 - P1);  // Linear interpolation weight
+        cvValue = cvP1 + cvWeight * (cvP2 - cvP1);
     }
     else
     {
-        cpValue = 1878.2529 * pow(T - 93.7469, 3) + 15.5442 * pow(T - 93.7469, 2) + 0.6391 * (T - 93.7469) + 0.0276;;
+        cvValue = 13435.9443 * Foam::pow(T - 26.3925, 3) + 1148.9115 * Foam::pow(T - 26.3925, 2) + 127.9205 * (T - 26.3925) + 35.0688;
     }
 
-    return cpValue;
+    return cvValue;
 }
 
 

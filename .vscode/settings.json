@@ -13,6 +13,7 @@
         "eRefConstThermo.C": "cpp",
         "H2_lTransport.C": "cpp",
         "cmath": "cpp",
-        "complex": "cpp"
+        "complex": "cpp",
+        "ThermalPhaseChangePhaseSystem.C": "cpp"
     }
 }
